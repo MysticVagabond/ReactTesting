@@ -1,30 +1,50 @@
 const { ApolloServer, gql } = require('apollo-server');
 
 const typeDefs = gql`
-  type Book {
-    title: String
-    author: String
+  type CoinType {
+    name: String
+    coinGeckoName: String
+    symbol: String
+  }
+
+  type Coin {
+    coinType: CoinType
+    amount: Float
   }
 
   type Query {
-    books: [Book]
+    coins: [CoinType]
+    coinDetails: [Coin]
   }
 `;
 
-const books = [
+const ethTemp = {
+  name: 'Ethereum',
+  coinGeckoName: 'ethereum',
+  symbol: 'ETH'
+}
+
+const croTemp = {
+  name: 'Crypto.com Coin',
+  coinGeckoName: 'crypto-com-chain',
+  symbol: 'CRO'
+}
+
+const temp = [
     {
-      title: 'The Awakening',
-      author: 'Kate Chopin',
+      coinType: ethTemp,
+      amount: 0.04362742,
     },
     {
-      title: 'City of Glass',
-      author: 'Paul Auster',
+      coinType: croTemp,
+      amount: 2567,
     },
 ];
 
 const resolvers = {
     Query: {
-      books: () => books,
+      coinDetails: () => temp,
+      coins: () => [ethTemp, croTemp]
     },
 };
 
