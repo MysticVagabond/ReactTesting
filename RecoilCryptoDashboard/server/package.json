@@ -1,0 +1,17 @@
+{
+  "name": "cyrpto-dashboard-server",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^16.11.13",
+    "apollo-server": "^3.5.0",
+    "graphql": "^15.8.0",
+    "typescript": "^4.5.4"
+  }
+}
