@@ -15,9 +15,12 @@ function App() {
     <RecoilRoot>
       {data 
         ? data.providersList.map((p: string) => {
-            return <Provider providerName={p} />
+            return <Provider providerName={p} key={p}/>
           }) 
-        : <div>Loading ...</div>}
+        : null}
+
+      {loading ? <div>Loading provider list...</div> : null}
+      {error ? <div>Error in getting provider list</div> : null}
     </RecoilRoot>
   );
 }

@@ -1,8 +1,8 @@
-export const Coin: React.FC<{coinName: string, symbol: string, value: number, amount: number}> = ({coinName, symbol, value, amount}) => {
+export const Coin: React.FC<{coinName: string, amount: number}> = ({coinName, amount}) => {
     // Use Recoil for getting coin details which calls on backend
     // Display
 
     return (
-        <div>{coinName}</div>
+        <div>I have {amount} {coinName}</div>
     );
 }
