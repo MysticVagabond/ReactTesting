@@ -59,12 +59,8 @@ export const kava = {
     value: 3.24
 }
 
-export const coinList = [ethereum, cryptoDotCom, shibaInu, binanceEthereum, loopring, cake, polkadot, kava];
+const coinList = [ethereum, cryptoDotCom, shibaInu, binanceEthereum, loopring, cake, polkadot, kava];
 
 export function coinByNameFunction(_, { coinName }) {
     return coinList.find((coin) => coin.name === coinName)
-}
-
-export function coinBySymbolFunction(_, { coinSymbol }) {
-    return coinList.find((coin) => coin.symbol === coinSymbol)
 }

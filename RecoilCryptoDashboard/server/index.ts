@@ -1,4 +1,4 @@
-import { coinList, coinByNameFunction, coinBySymbolFunction } from "./schemas/coins";
+import { coinByNameFunction } from "./schemas/coins";
 import { providerByNameFuncion, providerNameList } from "./schemas/providers";
 
 const { ApolloServer, gql } = require('apollo-server');
@@ -12,7 +12,7 @@ const typeDefs = gql`
   }
 
   type Coin {
-    coinType: CoinType
+    coinTypeName: String
     amount: Float
   }
 
@@ -22,9 +22,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    coins: [CoinType]
-    coinByName(coinName: String): CoinType
-    coinBySymbol(coinSymbol: String): CoinType
+    coinDetails(coinName: String): CoinType
     providersList: [String]
     provider(providerName: String): Provider
   }
@@ -32,9 +30,7 @@ const typeDefs = gql`
 
 const resolvers = {
     Query: {
-      coins: () => coinList,
-      coinByName: coinByNameFunction,
-      coinBySymbol: coinBySymbolFunction,
+      coinDetails: coinByNameFunction,
       providersList: () => providerNameList,
       provider: providerByNameFuncion
     },

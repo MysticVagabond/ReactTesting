@@ -12,15 +12,15 @@ const BinanceProvider = {
     providerName: BINANCE,
     coins: [
     {
-        coinType: binanceEthereum,
+        coinTypeName: binanceEthereum.name,
         amount: 0.04421439
     },
     {
-        coinType: ethereum,
+        coinTypeName: ethereum.name,
         amount: 0.00004118
     },
     {
-        coinType: cake,
+        coinTypeName: cake.name,
         amount: 0.00984676
     }]
 }
@@ -28,7 +28,7 @@ const BinanceProvider = {
 const BlockFiProvider = {
     providerName: BLOCKFI,
     coins: [{
-        coinType: ethereum,
+        coinTypeName: ethereum.name,
         amount: 0.15835733
     }]
 }
@@ -36,7 +36,7 @@ const BlockFiProvider = {
 const CoinbaseProvider = {
     providerName: COINBASE,
     coins: [{
-        coinType: shibaInu,
+        coinTypeName: shibaInu.name,
         amount: 1070544.05316158
     }]
 }
@@ -45,15 +45,15 @@ const CryptoDotComProvider = {
     providerName: CRYPTODOTCOM,
     coins: [
     {
-        coinType: cryptoDotCom,
+        coinTypeName: cryptoDotCom.name,
         amount: 2586.82
     },
     {
-        coinType: loopring,
+        coinTypeName: loopring.name,
         amount: 26.6
     },
     {
-        coinType: cake,
+        coinTypeName: cake.name,
         amount: 0.05
     }]
 }
@@ -62,11 +62,11 @@ const KrakenProvider = {
     providerName: KRAKEN,
     coins: [
     {
-        coinType: polkadot,
+        coinTypeName: polkadot.name,
         amount: 7.74742934
     },
     {
-        coinType: kava,
+        coinTypeName: kava.name,
         amount: 24.059938
     }]
 }

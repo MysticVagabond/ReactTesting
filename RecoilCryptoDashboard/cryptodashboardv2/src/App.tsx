@@ -1,32 +1,24 @@
 import { gql, useQuery } from "@apollo/client";
+import { RecoilRoot } from "recoil";
+import { Provider } from "./components/provider";
 
-const testQuery = gql`
-query Query {
-  coinDetails {
-    amount
-    coinType {
-      name
-    }
-  }
+const getProvidersQuery = gql`
+query GetProviders {
+  providersList
 }`;
 
 function App() {
-  const {loading, error, data} = useQuery(testQuery);
+  const {loading, error, data} = useQuery(getProvidersQuery);
+
 
   return (
-    <div>
-      <div>Hello World!</div>
-      { loading ? <p>Loading...</p> : null }
-      { error ? <p>Error</p> : null }
-      { data ? data.coinDetails.map((coinDetails: any) => {
-          return (
-            <>
-              <span>You have {coinDetails.amount} {coinDetails.coinType.name}</span>
-              <br/>
-            </>
-            );
-      }) : null}
-    </div>
+    <RecoilRoot>
+      {data 
+        ? data.providersList.map((p: string) => {
+            return <Provider providerName={p} />
+          }) 
+        : <div>Loading ...</div>}
+    </RecoilRoot>
   );
 }
 
