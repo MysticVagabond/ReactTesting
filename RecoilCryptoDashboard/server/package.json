@@ -2,8 +2,11 @@
   "name": "cyrpto-dashboard-server",
   "version": "1.0.0",
   "main": "index.ts",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node out/index.js",
+    "buildAndStart": "tsc --outDir out index.ts && npm run start"
   },
   "keywords": [],
   "author": "",

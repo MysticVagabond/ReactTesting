@@ -5,6 +5,7 @@
 /server/node_modules
 /cryptodashboardv2/package-lock.json
 /server/package-lock.json
+/server/out
 
 # testing
 /cryptodashboardv2/coverage
